@@ -1,0 +1,16 @@
+package com.adriandevs.androidmaster1.firstapp
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.TextView
+import com.adriandevs.androidmaster1.R
+
+class ResultActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_result)
+        val tvResult : TextView = findViewById(R.id.tvResult)
+        val name:String =  intent.extras?.getString("EXTRA_NAME").orEmpty()
+        tvResult.text = "Hola $name"
+    }
+}
