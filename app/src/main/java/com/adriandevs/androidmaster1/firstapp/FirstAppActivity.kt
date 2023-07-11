@@ -3,27 +3,25 @@ package com.adriandevs.androidmaster1.firstapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.widget.AppCompatButton
-import androidx.appcompat.widget.AppCompatEditText
-import com.adriandevs.androidmaster1.R
+import com.adriandevs.androidmaster1.databinding.ActivityFirstAppBinding
+import com.adriandevs.androidmaster1.firstapp.common.KeyConstants.ExtraName
 
 class FirstAppActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityFirstAppBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_first_app)
-        val btnStart = findViewById<AppCompatButton>(R.id.btnStart)
-        val etName = findViewById<AppCompatEditText>(R.id.etName)
+        binding = ActivityFirstAppBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        configBtnStart()
+    }
 
-
-
-        btnStart.setOnClickListener {
-            val name = etName.text.toString()
-
-            if(name.isNotEmpty()){
+    private fun configBtnStart() {
+        binding.btnStart.setOnClickListener {
+            val name = binding.etName.text.toString()
+            if (name.isNotEmpty()) {///////////////// modificar para que aparte de que no este vacio, tenga que sewr obligatoriamente una string y no numeros!
                 val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra("EXTRA_NAME", name)
+                intent.putExtra(ExtraName, name)
                 startActivity(intent)
             }
         }
