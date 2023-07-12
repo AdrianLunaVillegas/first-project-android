@@ -20,7 +20,7 @@ class MenuActivity : AppCompatActivity() {
         navigateTobtnImcApp()
     }
 
-    private fun navigateToSaludApp(){
+    private fun navigateToSaludApp() {
         binding.btnSaludApp.setOnClickListener {
             val intent = Intent(this, FirstAppActivity::class.java)
             startActivity(intent)
@@ -28,7 +28,7 @@ class MenuActivity : AppCompatActivity() {
 
     }
 
-    private fun navigateTobtnImcApp(){
+    private fun navigateTobtnImcApp() {
         binding.btnIMCApp.setOnClickListener {
             val intent = Intent(this, ImcCalculatorActivity::class.java)
             startActivity(intent)

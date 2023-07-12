@@ -13,8 +13,8 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val tvResult : TextView = binding.tvResult
-        val name:String =  intent.extras?.getString(ExtraName).orEmpty()
+        val tvResult: TextView = binding.tvResult
+        val name: String = intent.extras?.getString(ExtraName).orEmpty()
         tvResult.text = "Hola $name"
     }
 }
