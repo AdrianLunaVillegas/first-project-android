@@ -14,16 +14,18 @@ class ImcCalculatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityImcCalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initComponents()
+       initialize()
+    }
+
+    private fun initialize(){
         initListeners()
+       // initComponents()
         setGenderColor()
     }
-
-
-    private fun initComponents() {
-        binding.btnMale
-        binding.btnFemale
-    }
+//    private fun initComponents() {
+//        binding.btnMale
+//        binding.btnFemale
+//    }
 
     private fun initListeners() {
         binding.btnMale.setOnClickListener {
