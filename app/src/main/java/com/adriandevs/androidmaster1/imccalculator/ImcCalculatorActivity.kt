@@ -26,6 +26,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         setGenderColor()
         setWeight()
         setAge()
+        calculateImc()
     }
 
     private fun initListeners() {
@@ -65,9 +66,15 @@ class ImcCalculatorActivity : AppCompatActivity() {
                 currentAge -= 1
                 setAge()
             }
+            btnCalculate.setOnClickListener {
+                calculateImc
+            }
         }
     }
 
+    private calculateImc(){
+
+    }
     private fun setWeight() {
         binding.tvWeight.text = currentWeight.toString()
     }
