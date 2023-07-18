@@ -6,6 +6,22 @@
     <string name="weight">Weight</string>
     <string name="age">Age</string>
     <string name="calculate">Calculate</string>
+    <string name="result">Your Result</string>
+    <string name="recalculate">Recalculate</string>
+    <string name="error">error</string>
+
+    <string name="title_under_weight">Under Weight</string>
+    <string name="description_under_weight">You are below optimal for your height and weight</string>
+
+    <string name="title_normal_weight">Normal Weight</string>
+    <string name="description_normal_weight">You are at your optimal weight</string>
+
+    <string name="title_over_weight">Overweight</string>
+    <string name="description_over_weight">you are above your optimal weight</string>
+
+    <string name="title_obese_weight">Obese</string>
+    <string name="description_obese_weight">you are obese see the doctor</string>
+
     <string name="title_activity_imc_calculator">ImcCalculatorActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

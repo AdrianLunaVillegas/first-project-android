@@ -16,4 +16,9 @@
     <color name="title_text">#FF8D8E98</color>
     <color name="background_fav">#FF6200EE</color>
 
+    <color name="under_weight">#FFEA00</color>
+    <color name="normal_weight">#76FF03</color>
+    <color name="over_weight">#FF3D00</color>
+    <color name="obese">#FF1744</color>
+
 </resources>
