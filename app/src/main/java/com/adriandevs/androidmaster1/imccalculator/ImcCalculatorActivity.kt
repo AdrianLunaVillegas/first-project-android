@@ -1,19 +1,23 @@
 package com.adriandevs.androidmaster1.imccalculator
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.adriandevs.androidmaster1.R
 import com.adriandevs.androidmaster1.databinding.ActivityImcCalculatorBinding
+import com.adriandevs.androidmaster1.firstapp.common.KeyConstants.IMC_KEY
+import com.adriandevs.androidmaster1.firstapp.common.ResultIMCActivity
 import java.text.DecimalFormat
 
 class ImcCalculatorActivity : AppCompatActivity() {
     private lateinit var binding: ActivityImcCalculatorBinding
     private var isMaleSelected: Boolean = true
     private var isFemaleSelected: Boolean = false
-    private var currentWeight: Int = 50
+    private var currentWeight: Int = 80
     private var currentAge: Int = 30
-
+    private var currentHeight: Int = 120
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityImcCalculatorBinding.inflate(layoutInflater)
@@ -26,8 +30,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
         setGenderColor()
         setWeight()
         setAge()
-        calculateImc()
+        calculateIMC()
+
     }
+
 
     private fun initListeners() {
         binding.apply {
@@ -44,10 +50,10 @@ class ImcCalculatorActivity : AppCompatActivity() {
                 setGenderColor()
             }
             rsHeight.addOnChangeListener { _, value, _ ->
+
                 val df = DecimalFormat("#.##")
-                val result = df.format(value)
-                val text = "$result cm"
-                tvHeight.text = text
+                currentHeight = df.format(value).toInt()
+                tvHeight.text = "$currentHeight cm"
             }
 
             btnPlusWeight.setOnClickListener {
@@ -67,14 +73,25 @@ class ImcCalculatorActivity : AppCompatActivity() {
                 setAge()
             }
             btnCalculate.setOnClickListener {
-                calculateImc
+                 val result = calculateIMC()
+                navigateToResult(result)
+
             }
         }
     }
 
-    private calculateImc(){
-
+    private fun navigateToResult(result: Double) {
+        val intent = Intent(this, ResultIMCActivity::class.java)
+        intent.putExtra(IMC_KEY, result)
+        startActivity(intent)
     }
+
+    private fun calculateIMC():Double{
+        val df = DecimalFormat("#.##")
+        val imc = currentWeight / ((currentHeight.toDouble() / 100 * currentHeight.toDouble() / 100))
+        return df.format(imc).toDouble()
+    }
+
     private fun setWeight() {
         binding.tvWeight.text = currentWeight.toString()
     }
@@ -105,5 +122,6 @@ class ImcCalculatorActivity : AppCompatActivity() {
     }
 
 }
+
 
 

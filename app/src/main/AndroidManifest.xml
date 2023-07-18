@@ -32,6 +32,9 @@
         <activity
             android:name=".firstapp.FirstAppActivity"
             android:exported="false" />
+        <activity
+            android:name=".firstapp.common.ResultIMCActivity"
+            android:exported="false"/>
     </application>
 
 </manifest>
