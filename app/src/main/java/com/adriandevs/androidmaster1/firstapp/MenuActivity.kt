@@ -20,6 +20,9 @@ class MenuActivity : AppCompatActivity() {
         navigateTobtnImcApp()
     }
 
+    private fun navigateToTodoApp(){
+
+    }
     private fun navigateToSaludApp() {
         binding.btnSaludApp.setOnClickListener {
             val intent = Intent(this, FirstAppActivity::class.java)

@@ -56,7 +56,6 @@ class ResultIMCActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     private fun initListeners() {

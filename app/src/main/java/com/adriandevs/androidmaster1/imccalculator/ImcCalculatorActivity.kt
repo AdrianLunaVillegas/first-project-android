@@ -31,7 +31,6 @@ class ImcCalculatorActivity : AppCompatActivity() {
         setWeight()
         setAge()
         calculateIMC()
-
     }
 
 
