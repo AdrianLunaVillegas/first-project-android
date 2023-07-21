@@ -34,10 +34,12 @@
             android:exported="false" />
         <activity
             android:name=".firstapp.common.ResultIMCActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".firstapp.common.GenderCardView"
-            android:exported="false"/>
+            android:exported="false" />
+
+
     </application>
 
 </manifest>
