@@ -35,10 +35,6 @@
         <activity
             android:name=".firstapp.common.ResultIMCActivity"
             android:exported="false" />
-        <activity
-            android:name=".firstapp.common.GenderCardView"
-            android:exported="false" />
-
 
     </application>
 

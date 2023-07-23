@@ -2,8 +2,8 @@
 <resources>
 
     <declare-styleable name="GenderCardView">
-        <attr name="customImage" format="reference" />
-        <attr name="customText" format="string" />
+        <attr name="customImageGender" format="reference" />
+        <attr name="customTextGender" format="string" />
 
     </declare-styleable>
 

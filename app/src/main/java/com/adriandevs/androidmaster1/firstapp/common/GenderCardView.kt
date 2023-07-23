@@ -18,11 +18,11 @@ class GenderCardView(
     init {
 
         val attrsArray = context.obtainStyledAttributes(attributeSet, R.styleable.GenderCardView)
-        val customImage = attrsArray.getResourceId(R.styleable.GenderCardView_customImage, 0)
-        val customText = attrsArray.getString(R.styleable.GenderCardView_customText)
+        val customImage = attrsArray.getResourceId(R.styleable.GenderCardView_customImageGender, 0)
+        val customText = attrsArray.getString(R.styleable.GenderCardView_customTextGender)
         binding.apply {
             genderImage.setImageResource(customImage)
-            tvMale.text = customText
+            textViewMale.text = customText
         }
 
         attrsArray.recycle()
