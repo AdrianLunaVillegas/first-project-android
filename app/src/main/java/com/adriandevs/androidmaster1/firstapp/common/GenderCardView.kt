@@ -21,7 +21,7 @@ class GenderCardView(
         val customImage = attrsArray.getResourceId(R.styleable.GenderCardView_customImage, 0)
         val customText = attrsArray.getString(R.styleable.GenderCardView_customText)
         binding.apply {
-            gMale.setImageResource(customImage)
+            genderImage.setImageResource(customImage)
             tvMale.text = customText
         }
 
@@ -29,3 +29,5 @@ class GenderCardView(
 
     }
 }
+
+////testing if it doesn't mess it up and this commit is uploaded and I delete the previous one/////probando si no la lio y se sube este commit y borro el anterior
