@@ -10,23 +10,25 @@ import com.google.android.material.card.MaterialCardView
 class GenderCardView(
     context: Context, attributeSet: AttributeSet
 ) : MaterialCardView(context, attributeSet) {
-
-    private val binding = CardViewGenderBinding.inflate(
-        LayoutInflater.from(context), this, true
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private val binding = CardViewGenderBinding.inflate( // porque aqui es VAL y en la firstActivity es VAR?
+        LayoutInflater.from(context), this, true//because here it is VAL and in the firstActivity it is VAR?
     )
 
     init {
 
         val attrsArray = context.obtainStyledAttributes(attributeSet, R.styleable.GenderCardView)
         val customImage = attrsArray.getResourceId(R.styleable.GenderCardView_customImageGender, 0)
-        val customText = attrsArray.getString(R.styleable.GenderCardView_customTextGender)
+        val customText = attrsArray.getString(R.styleable.GenderCardView_customTextGender) //Why is id not put at the end of getString?/////////////////////
+        initData(customImage, customText)
+        attrsArray.recycle()
+    }
+
+    private fun initData(customImage: Int, customText: String?) {
         binding.apply {
             genderImage.setImageResource(customImage)
-            textViewMale.text = customText
+            textViewGender.text = customText
         }
-
-        attrsArray.recycle()
-
     }
 }
 

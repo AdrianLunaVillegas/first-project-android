@@ -25,23 +25,23 @@
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btnFemale"
                 app:cardCornerRadius="16dp"
-                app:customImage="@drawable/ic_male"
-                app:customText="@string/male" />
+                app:customImageGender="@drawable/ic_male"
+                app:customTextGender="@string/male"
+                app:layout_constraintEnd_toStartOf="@id/btnFemale"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.adriandevs.androidmaster1.firstapp.common.GenderCardView
                 android:id="@+id/btnFemale"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
-                app:layout_constraintStart_toEndOf="@id/btnMale"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:cardCornerRadius="16dp"
-                app:customImage="@drawable/ic_female"
-                app:customText="@string/female" />
+                app:customImageGender="@drawable/ic_female"
+                app:customTextGender="@string/female"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnMale"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <androidx.cardview.widget.CardView

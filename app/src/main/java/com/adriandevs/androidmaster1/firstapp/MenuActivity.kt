@@ -18,9 +18,13 @@ class MenuActivity : AppCompatActivity() {
         setContentView(binding.root)
         navigateToSaludApp()
         navigateTobtnImcApp()
+        navigateToTodoApp()
     }
 
     private fun navigateToTodoApp(){
+        binding.btnTODOApp.setOnClickListener {
+           // val intent = Intent(this, )
+        }
 
     }
     private fun navigateToSaludApp() {
