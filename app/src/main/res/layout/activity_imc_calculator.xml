@@ -9,7 +9,6 @@
     android:paddingVertical="32dp"
     tools:context=".imccalculator.ImcCalculatorActivity">
 
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -43,8 +42,7 @@
                 app:layout_constraintStart_toEndOf="@id/btnMale"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnHeight"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -62,18 +60,18 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/height"
                         android:textAllCaps="true"
                         android:textColor="@color/title_text" />
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvHeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="120 cm"
+                        android:text="@string/cm_height"
                         android:textColor="@color/white"
                         android:textSize="38sp"
                         android:textStyle="bold" />
@@ -88,10 +86,9 @@
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
+            </com.google.android.material.card.MaterialCardView>
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnWeight"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
@@ -109,21 +106,21 @@
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/weight"
                         android:textAllCaps="true"
                         android:textColor="@color/title_text" />
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvWeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/white"
                         android:textSize="38sp"
                         android:textStyle="bold"
-                        tools:text="60" />
+                        tools:text="@string/kg_weight" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"
@@ -136,6 +133,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="16dp"
+                            android:contentDescription="@null"
                             android:src="@drawable/ic_subtract"
                             app:backgroundTint="@color/background_fav"
                             app:tint="@color/white" />
@@ -144,18 +142,18 @@
                             android:id="@+id/btnPlusWeight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:contentDescription="@null"
                             android:src="@drawable/ic_plus"
                             app:backgroundTint="@color/background_fav"
                             app:tint="@color/white" />
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
-
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/btnAge"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
@@ -166,21 +164,20 @@
                 app:layout_constraintStart_toEndOf="@+id/btnWeight"
                 app:layout_constraintTop_toBottomOf="@+id/btnHeight">
 
-
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:orientation="vertical">
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/age"
                         android:textAllCaps="true"
                         android:textColor="@color/title_text" />
 
-                    <TextView
+                    <androidx.appcompat.widget.AppCompatTextView
                         android:id="@+id/tvAge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -196,6 +193,7 @@
                         android:orientation="horizontal">
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:contentDescription="@null"
                             android:id="@+id/btnSubtractAge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -205,6 +203,7 @@
                             app:tint="@color/white" />
 
                         <com.google.android.material.floatingactionbutton.FloatingActionButton
+                            android:contentDescription="@null"
                             android:id="@+id/btnPlusAge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -214,26 +213,24 @@
 
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
-
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-            </androidx.cardview.widget.CardView>
-
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCalculate"
         android:layout_width="0dp"
+        android:textColor="@color/white"
         android:layout_height="80dp"
+        android:background="@drawable/button"
         android:text="@string/calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".firstapp.FirstAppActivity">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="64dp"
-        android:text="Escribe tu nombre"
+        android:text="@string/firstappwelcome"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="italic"
@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/teal_200"
-        android:text="Pulsame"
+        android:text="@string/press"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

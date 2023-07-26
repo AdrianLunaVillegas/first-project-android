@@ -10,16 +10,15 @@ import com.google.android.material.card.MaterialCardView
 class GenderCardView(
     context: Context, attributeSet: AttributeSet
 ) : MaterialCardView(context, attributeSet) {
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private val binding = CardViewGenderBinding.inflate( // porque aqui es VAL y en la firstActivity es VAR?
-        LayoutInflater.from(context), this, true//because here it is VAL and in the firstActivity it is VAR?
+    private val binding = CardViewGenderBinding.inflate(
+        LayoutInflater.from(context), this, true
     )
 
     init {
 
         val attrsArray = context.obtainStyledAttributes(attributeSet, R.styleable.GenderCardView)
         val customImage = attrsArray.getResourceId(R.styleable.GenderCardView_customImageGender, 0)
-        val customText = attrsArray.getString(R.styleable.GenderCardView_customTextGender) //Why is id not put at the end of getString?/////////////////////
+        val customText = attrsArray.getString(R.styleable.GenderCardView_customTextGender)
         initData(customImage, customText)
         attrsArray.recycle()
     }
@@ -31,5 +30,3 @@ class GenderCardView(
         }
     }
 }
-
-////testing if it doesn't mess it up and this commit is uploaded and I delete the previous one/////probando si no la lio y se sube este commit y borro el anterior

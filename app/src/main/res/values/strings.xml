@@ -1,15 +1,27 @@
 <resources>
-    <string name="app_name">AndroidMaster1</string>
+    <string name="app_name">RandomApps</string>
+
+<!--    Strings MenuActivity-->
+    <string name="app_greet_name">SaludApp</string>
+    <string name="app_IMC_name">IMC App</string>
+    <string name="app_todo_name">TODO App</string>
+
+<!--    Strings FirstApp-->
+    <string name="press">Press me</string>
+    <string name="firstappwelcome">Write your name</string>
+
     <!--            Strings IMC-->
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="height">Height</string>
     <string name="weight">Weight</string>
     <string name="age">Age</string>
+    <string name="cm_height">120cm</string>
     <string name="calculate">Calculate</string>
     <string name="result">Your Result</string>
     <string name="recalculate">Recalculate</string>
     <string name="error">error</string>
+    <string name="kg_weight">60</string>
 
     <string name="title_under_weight">Under Weight</string>
     <string name="description_under_weight">You are below optimal for your height and weight</string>
@@ -24,6 +36,13 @@
     <string name="description_obese_weight">you are obese see the doctor</string>
 
     <string name="title_activity_imc_calculator">ImcCalculatorActivity</string>
+
+<!--    Strings TodoApp-->
+
+    <string name="todo_title">Welcome, Adrian</string>
+    <string name="todo_categories">Categories:</string>
+    <string name="todo_tasks">Tasks</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

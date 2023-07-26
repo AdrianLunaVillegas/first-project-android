@@ -35,6 +35,10 @@
         <activity
             android:name=".firstapp.common.ResultIMCActivity"
             android:exported="false" />
+        <activity
+            android:name=".todoapp.TodoActivity"
+            android:theme="@style/Theme.TODOApp"
+            android:exported="false" />
 
     </application>
 
