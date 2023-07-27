@@ -6,9 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginVertical="4dp"
     app:cardBackgroundColor="@color/todo_background_card"
-    app:cardCornerRadius="16dp"
-    app:strokeColor="@color/obese"
-    app:strokeWidth="1dp">
+    app:cardCornerRadius="16dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"

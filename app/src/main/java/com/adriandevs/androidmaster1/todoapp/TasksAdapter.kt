@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.adriandevs.androidmaster1.R
+import com.adriandevs.androidmaster1.databinding.ItemTodoTaskBinding
 
 class TasksAdapter(private val tasks: List<Task>) : RecyclerView.Adapter<TasksViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TasksViewHolder {
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_todo_task, parent, false)
-        return TasksViewHolder(view)
+        val binding =
+            ItemTodoTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return TasksViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: TasksViewHolder, position: Int) {

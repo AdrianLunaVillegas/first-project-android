@@ -11,28 +11,33 @@ class CategoriesViewHolder(binding: ItemTaskCategoryBinding) :
 
     fun render(taskCategory: TaskCategory) {
         viewBinding.apply {
-            tvCategoryName.text = "EXEMPLE"
 
             when (taskCategory) {
                 TaskCategory.Business -> {
-                    tvCategoryName.text =
-                        "Negocios"
+                    tvCategoryName.text = root.context.getString(R.string.todo_dialog_category_business)
                     divider.setBackgroundColor(
                         ContextCompat.getColor(divider.context, R.color.todo_business_category)
                     )
                 }
 
                 TaskCategory.Other -> {
-                    tvCategoryName.text = "Otros"
+                    tvCategoryName.text = root.context.getString(R.string.todo_dialog_category_other)
                     divider.setBackgroundColor(
                         ContextCompat.getColor(divider.context, R.color.todo_other_category)
                     )
                 }
 
                 TaskCategory.Personal -> {
-                    tvCategoryName.text = "Personal"
+                    tvCategoryName.text = root.context.getString(R.string.todo_dialog_category_Personal)
                     divider.setBackgroundColor(
                         ContextCompat.getColor(divider.context, R.color.todo_personal_category)
+                    )
+                }
+
+                TaskCategory.Tasks -> {
+                    tvCategoryName.text = root.context.getString(R.string.todo_tasks)
+                    divider.setBackgroundColor(
+                        ContextCompat.getColor(divider.context, R.color.todo_tasks_category)
                     )
                 }
             }

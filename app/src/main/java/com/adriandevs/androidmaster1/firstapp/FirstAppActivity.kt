@@ -8,8 +8,6 @@ import com.adriandevs.androidmaster1.firstapp.common.KeyConstants.ExtraName
 
 class FirstAppActivity : AppCompatActivity() {
     private var binding: ActivityFirstAppBinding? = null
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFirstAppBinding.inflate(layoutInflater)

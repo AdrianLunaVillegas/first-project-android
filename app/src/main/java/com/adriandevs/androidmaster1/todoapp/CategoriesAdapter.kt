@@ -13,10 +13,8 @@ class CategoriesAdapter(private val categories: List<TaskCategory>) :
             ItemTaskCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CategoriesViewHolder(binding)
     }
-
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
         holder.render(categories[position])
     }
-
     override fun getItemCount(): Int = categories.size
 }
