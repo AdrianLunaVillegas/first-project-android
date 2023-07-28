@@ -36,7 +36,7 @@
             android:name=".firstapp.common.ResultIMCActivity"
             android:exported="false" />
         <activity
-            android:name=".todoapp.TodoActivity"
+            android:name=".todoapp.ui.features.todo.TodoActivity"
             android:theme="@style/Theme.TODOApp"
             android:exported="false" />
 

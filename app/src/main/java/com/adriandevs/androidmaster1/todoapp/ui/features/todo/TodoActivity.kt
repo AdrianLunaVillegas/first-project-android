@@ -1,20 +1,18 @@
-package com.adriandevs.androidmaster1.todoapp
+package com.adriandevs.androidmaster1.todoapp.ui.features.todo
 
 import android.app.Dialog
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.widget.Button
 import android.widget.RadioButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adriandevs.androidmaster1.R
 import com.adriandevs.androidmaster1.databinding.ActivityTodoBinding
 import com.adriandevs.androidmaster1.databinding.DialogTaskBinding
-import com.adriandevs.androidmaster1.todoapp.TaskCategory.Business
-import com.adriandevs.androidmaster1.todoapp.TaskCategory.Other
-import com.adriandevs.androidmaster1.todoapp.TaskCategory.Personal
-import com.adriandevs.androidmaster1.todoapp.TaskCategory.Tasks
-import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.adriandevs.androidmaster1.todoapp.ui.features.todo.view.adapter.categories.CategoriesAdapter
+import com.adriandevs.androidmaster1.todoapp.ui.features.todo.view.adapter.categories.TaskCategory
+import com.adriandevs.androidmaster1.todoapp.ui.features.todo.view.adapter.categories.TaskCategory.*
+import com.adriandevs.androidmaster1.todoapp.ui.features.todo.view.adapter.task.Task
+import com.adriandevs.androidmaster1.todoapp.ui.features.todo.view.adapter.task.TasksAdapter
 
 class TodoActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTodoBinding
@@ -33,7 +31,6 @@ class TodoActivity : AppCompatActivity() {
     )
     private lateinit var categoriesAdapter: CategoriesAdapter
     private lateinit var taskAdapter: TasksAdapter
-    private lateinit var fabAddTask: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,17 +55,21 @@ class TodoActivity : AppCompatActivity() {
             val radioGroupCategories = dialogBinding.radioGroupCategories
 
             buttonAddTask.setOnClickListener {
-                val selectedId = radioGroupCategories.checkedRadioButtonId
-                val selectedRadioButton: RadioButton =
-                    radioGroupCategories.findViewById(selectedId) //how do i access selectedId without fincviewById?//////////////
-                val currentCategory: TaskCategory = when (selectedRadioButton.text) {
-                    "Business" -> Business
-                    "Personal" -> Personal
-                    else -> Other
+                val currentTask = editTextTask.text.toString()
+                if(currentTask.isNotEmpty()){
+                    val selectedId = radioGroupCategories.checkedRadioButtonId
+                    val selectedRadioButton: RadioButton =
+                        radioGroupCategories.findViewById(selectedId) //how do i access selectedId without fincviewById?//////////////
+                    val currentCategory: TaskCategory = when (selectedRadioButton.text) {
+                        getString(R.string.todo_dialog_category_business) -> Business
+                        getString(R.string.todo_dialog_category_Personal) -> Personal
+                        else -> Other
+                    }
+
+                    tasks.add(Task(currentTask, currentCategory))
+                    updateTasks()
+                    dialog.hide()
                 }
-
-                tasks.add(Task(editTextTask.text.toString(), currentCategory))
-
             }
 
             dialog.show()
@@ -81,9 +82,16 @@ class TodoActivity : AppCompatActivity() {
                 LinearLayoutManager(this@TodoActivity, LinearLayoutManager.HORIZONTAL, false)
             rvCategories.adapter = categoriesAdapter
 
-            taskAdapter = TasksAdapter(tasks)
+            taskAdapter = TasksAdapter(tasks) {position -> onItemSelected(position)}
             rvTasks.layoutManager = LinearLayoutManager(this@TodoActivity)
             rvTasks.adapter = taskAdapter
         }
+    }
+    private fun onItemSelected(position: Int){
+        tasks[position].isSelected = !tasks[position].isSelected
+        updateTasks()
+    }
+    private fun updateTasks(){
+        taskAdapter.notifyDataSetChanged()
     }
 }

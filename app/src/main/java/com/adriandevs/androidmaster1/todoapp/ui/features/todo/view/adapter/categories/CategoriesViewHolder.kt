@@ -1,4 +1,4 @@
-package com.adriandevs.androidmaster1.todoapp
+package com.adriandevs.androidmaster1.todoapp.ui.features.todo.view.adapter.categories
 
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView

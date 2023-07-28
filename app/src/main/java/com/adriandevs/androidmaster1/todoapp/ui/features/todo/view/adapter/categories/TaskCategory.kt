@@ -1,4 +1,4 @@
-package com.adriandevs.androidmaster1.todoapp
+package com.adriandevs.androidmaster1.todoapp.ui.features.todo.view.adapter.categories
 
 sealed class TaskCategory {
     object Personal: TaskCategory()

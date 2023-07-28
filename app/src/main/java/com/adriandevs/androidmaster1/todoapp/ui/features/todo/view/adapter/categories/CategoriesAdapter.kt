@@ -1,9 +1,8 @@
-package com.adriandevs.androidmaster1.todoapp
+package com.adriandevs.androidmaster1.todoapp.ui.features.todo.view.adapter.categories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.adriandevs.androidmaster1.R
 import com.adriandevs.androidmaster1.databinding.ItemTaskCategoryBinding
 
 class CategoriesAdapter(private val categories: List<TaskCategory>) :
