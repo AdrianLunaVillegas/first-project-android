@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     tools:context=".firstapp.ResultActivity">
 
-    <TextView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textColor="@color/teal_200"
         android:textSize="35sp"
-        tools:text="Bienvenido :)" />
+        tools:text="Welcome :)" />
+
 </FrameLayout>

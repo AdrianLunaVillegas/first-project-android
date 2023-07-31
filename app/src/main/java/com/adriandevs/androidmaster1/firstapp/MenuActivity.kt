@@ -8,6 +8,7 @@ import android.widget.Button
 import com.adriandevs.androidmaster1.R
 import com.adriandevs.androidmaster1.databinding.ActivityMenuBinding
 import com.adriandevs.androidmaster1.imccalculator.ImcCalculatorActivity
+import com.adriandevs.androidmaster1.todoapp.TodoActivity
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMenuBinding
@@ -18,11 +19,17 @@ class MenuActivity : AppCompatActivity() {
         setContentView(binding.root)
         navigateToSaludApp()
         navigateTobtnImcApp()
+        navigateToTodoApp()
     }
 
-    private fun navigateToTodoApp(){
+    private fun navigateToTodoApp() {
+        binding.btnTODOApp.setOnClickListener {
+            val intent = Intent(this, TodoActivity::class.java)
+            startActivity(intent)
+        }
 
     }
+
     private fun navigateToSaludApp() {
         binding.btnSaludApp.setOnClickListener {
             val intent = Intent(this, FirstAppActivity::class.java)

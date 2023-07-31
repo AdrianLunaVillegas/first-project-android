@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:background="@color/todo_background_todo_app"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <!--Why does the RadioGroup get smaller when compiling my App?-->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:hint="@string/todo_dialog_add_task"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButtonBusiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/todo_business_category"
+            android:checked="true"
+            android:text="@string/todo_dialog_category_business"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/todo_personal_category"
+            android:checked="false"
+            android:text="@string/todo_dialog_category_Personal"
+            android:textColor="@color/white" />
+
+        <RadioButton
+            android:id="@+id/radioButtonOther"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/todo_other_category"
+            android:checked="false"
+            android:text="@string/todo_dialog_category_other"
+            android:textColor="@color/white" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/todo_accent"
+        android:text="@string/todo_dialog_create_task" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

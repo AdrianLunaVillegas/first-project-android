@@ -7,22 +7,25 @@ import com.adriandevs.androidmaster1.databinding.ActivityFirstAppBinding
 import com.adriandevs.androidmaster1.firstapp.common.KeyConstants.ExtraName
 
 class FirstAppActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityFirstAppBinding
-
+    private var binding: ActivityFirstAppBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFirstAppBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        configBtnStart()
+        binding?.let{
+            setContentView(it.root)
+            configBtnStart()
+        }
     }
 
     private fun configBtnStart() {
-        binding.btnStart.setOnClickListener {
-            val name = binding.etName.text.toString()
-            if (name.isNotEmpty()) {///////////////// modificar para que aparte de que no este vacio, tenga que sewr obligatoriamente una string y no numeros!
-                val intent = Intent(this, ResultActivity::class.java)
-                intent.putExtra(ExtraName, name)
-                startActivity(intent)
+        binding?.apply {
+            btnStart.setOnClickListener {
+                val name = etName.text.toString()
+                if (name.isNotEmpty()) {
+                    val intent = Intent(this@FirstAppActivity, ResultActivity::class.java)
+                    intent.putExtra(ExtraName, name)
+                    startActivity(intent)
+                }
             }
         }
     }
