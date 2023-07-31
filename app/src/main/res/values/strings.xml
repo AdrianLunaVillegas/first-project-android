@@ -51,6 +51,7 @@
 
     <string name="todo_dialog_add_task">Add the task</string>
     <string name="todo_dialog_create_task">Create task</string>
+    <string name="todo_dialog_create_task_button_content_description">Button that allows as to register new task</string>
 
 
     <!-- Strings used for fragments for navigation -->

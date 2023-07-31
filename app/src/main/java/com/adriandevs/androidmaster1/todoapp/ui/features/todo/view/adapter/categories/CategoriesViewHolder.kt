@@ -9,26 +9,39 @@ class CategoriesViewHolder(binding: ItemTaskCategoryBinding) :
     RecyclerView.ViewHolder(binding.root) {
     private val viewBinding = binding
 
-    fun render(taskCategory: TaskCategory) {
+    fun render(taskCategory: TaskCategory, onItemSelected: (Int) -> Unit) {
         viewBinding.apply {
+
+            val color = if (taskCategory.isSelected) {
+                R.color.todo_background_card
+            } else {
+                R.color.todo_background_disabled
+            }
+
+            viewContainer.setBackgroundColor(ContextCompat.getColor(viewContainer.context, color))
+
+            itemView.setOnClickListener { onItemSelected(layoutPosition) }
 
             when (taskCategory) {
                 TaskCategory.Business -> {
-                    tvCategoryName.text = root.context.getString(R.string.todo_dialog_category_business)
+                    tvCategoryName.text =
+                        root.context.getString(R.string.todo_dialog_category_business)
                     divider.setBackgroundColor(
                         ContextCompat.getColor(divider.context, R.color.todo_business_category)
                     )
                 }
 
                 TaskCategory.Other -> {
-                    tvCategoryName.text = root.context.getString(R.string.todo_dialog_category_other)
+                    tvCategoryName.text =
+                        root.context.getString(R.string.todo_dialog_category_other)
                     divider.setBackgroundColor(
                         ContextCompat.getColor(divider.context, R.color.todo_other_category)
                     )
                 }
 
                 TaskCategory.Personal -> {
-                    tvCategoryName.text = root.context.getString(R.string.todo_dialog_category_Personal)
+                    tvCategoryName.text =
+                        root.context.getString(R.string.todo_dialog_category_Personal)
                     divider.setBackgroundColor(
                         ContextCompat.getColor(divider.context, R.color.todo_personal_category)
                     )

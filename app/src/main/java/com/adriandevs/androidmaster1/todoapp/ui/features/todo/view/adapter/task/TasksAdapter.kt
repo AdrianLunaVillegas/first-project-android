@@ -15,7 +15,7 @@ class TasksAdapter(private val tasks: List<Task>, private val onTaskSelected: (I
 
     override fun onBindViewHolder(holder: TasksViewHolder, position: Int) {
         holder.render(tasks[position])
-        holder.itemView.setOnClickListener {  onTaskSelected(position) }
+        holder.itemView.setOnClickListener { onTaskSelected(position) }
     }
 
     override fun getItemCount() = tasks.size
