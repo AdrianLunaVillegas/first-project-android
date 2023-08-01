@@ -18,7 +18,12 @@ class CategoriesViewHolder(binding: ItemTaskCategoryBinding) :
                 R.color.todo_background_disabled
             }
 
-            viewContainer.setBackgroundColor(ContextCompat.getColor(viewContainer.context, color))
+            viewContainer.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    viewContainer.context,
+                    color
+                )
+            )
 
             itemView.setOnClickListener { onItemSelected(layoutPosition) }
 

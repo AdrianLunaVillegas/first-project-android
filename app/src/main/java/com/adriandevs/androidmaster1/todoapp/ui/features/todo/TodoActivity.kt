@@ -69,7 +69,6 @@ class TodoActivity : AppCompatActivity() {
                             getString(R.string.todo_dialog_category_Personal) -> Personal
                             else -> Other
                         }
-
                         tasks.add(Task(currentTask, currentCategory))
                         updateTasks()
                         dialog.hide()
@@ -102,9 +101,13 @@ class TodoActivity : AppCompatActivity() {
     private fun updateCategories(position: Int) {
         categories[position].isSelected = !categories[position].isSelected
         categoriesAdapter?.notifyItemChanged(position)
+        updateTasks()
     }
 
     private fun updateTasks() {
+        val selectedCategories: List<TaskCategory> = categories.filter { it.isSelected }
+        val newTasks = tasks.filter { selectedCategories.contains(it.category) }
+        taskAdapter?.tasks = newTasks
         taskAdapter?.notifyDataSetChanged()
     }
 }
