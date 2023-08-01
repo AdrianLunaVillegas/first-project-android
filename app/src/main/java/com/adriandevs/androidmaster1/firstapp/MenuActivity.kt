@@ -1,14 +1,11 @@
 package com.adriandevs.androidmaster1.firstapp
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import com.adriandevs.androidmaster1.R
 import com.adriandevs.androidmaster1.databinding.ActivityMenuBinding
 import com.adriandevs.androidmaster1.imccalculator.ImcCalculatorActivity
-import com.adriandevs.androidmaster1.todoapp.TodoActivity
+import com.adriandevs.androidmaster1.todoapp.ui.features.todo.TodoActivity
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMenuBinding
